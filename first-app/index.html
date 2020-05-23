@@ -6,7 +6,7 @@
 
 <body>
   <div id="app" :title="platform">
-    <h1>{{ `${title}` }}</h1>
+    <h1>{{ reversedMessage }}</h1>
     <p>{{description}}</p>
     <a :href="link"> {{linkText}}</a>
   </div>
@@ -19,7 +19,15 @@
         linkText: 'Vue.js Home Page',
         link: 'https://vuejs.org/',
         description: 'Interactive lesson on how to remove the data from the DOM and put it on the Vue Instance'
-      }
+      },
+      computed: {
+        exclamation: function () {
+          return `${this.title}!!!`
+        },
+        reversedMessage: function () {
+          return this.exclamation.split('').reverse().join('');
+        }
+      },
     })
   </script>
 </body>
