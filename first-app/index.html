@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app" :title="platform">
+    <h1>{{ `${title}` }}</h1>
+    <p>{{description}}</p>
+    <a :href="link"> {{linkText}}</a>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        title: 'Learning Vue on Scrimba',
+        linkText: 'Vue.js Home Page',
+        link: 'https://vuejs.org/',
+        description: 'Interactive lesson on how to remove the data from the DOM and put it on the Vue Instance'
+      }
+    })
+  </script>
+</body>
+
+</html>
