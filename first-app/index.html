@@ -10,7 +10,8 @@
     <p>{{description}}</p>
     <a :href="link"> {{linkText}}</a><br><br>
     <input name="field" v-model="field" />
-    <p>The current value is: {{ exclamation }}</p>
+    <p>The current value is: {{ field }}</p>
+    <button @click="modified">Click Me</button>
   </div>
 
   <script>
@@ -22,14 +23,15 @@
         link: 'https://vuejs.org/',
         description: 'Interactive lesson on how to remove the data from the DOM and put it on the Vue Instance',
         field: ''
-
       },
       computed: {
         exclamation: function () {
           return `${this.field}!!!`
-        },
-        reversedMessage: function () {
-          return this.exclamation.split('').reverse().join('');
+        }
+      },
+      methods: {
+        modified: function () {
+          this.field += '!';
         }
       },
     })
